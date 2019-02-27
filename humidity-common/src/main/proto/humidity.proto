@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.playtika.services.grpc.humidity.common";
+
+// The temperature service definition.
+service Humidity {
+  // get a current temperature
+  rpc getCurrent(Empty) returns (HumidityResponse) {}
+}
+
+// No parameters
+message Empty {
+}
+
+// The response message containing the temperature
+message HumidityResponse {
+  int32 percent = 1;
+  int64 timestamp = 2;
+}

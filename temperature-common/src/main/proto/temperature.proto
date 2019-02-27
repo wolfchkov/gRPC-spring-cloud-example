@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.playtika.services.grpc.temperature.common";
+
+// The temperature service definition.
+service Temperature {
+  // get a current temperature
+  rpc getCurrent(Empty) returns (TemperatureResponse) {}
+}
+
+// No parameters
+message Empty {
+}
+
+// The response message containing the temperature
+message TemperatureResponse {
+  int32 temp = 1;
+  int64 timestamp = 2;
+}
