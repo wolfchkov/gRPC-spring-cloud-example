@@ -11,12 +11,12 @@ class WeatherController {
     private final GrpcWeatherService grpcWeatherService;
     private final RestWeatherService restWeatherService;
 
-    @GetMapping("/api/grpc/eureka")
+    @GetMapping("/api/grpc/weather")
     WeatherDTO getWeatherByGrpc() {
         return grpcWeatherService.getWeather();
     }
 
-    @GetMapping("/api/rest/eureka")
+    @GetMapping("/api/rest/weather")
     WeatherDTO getWeatherByRest() {
         return restWeatherService.getWeather();
     }
